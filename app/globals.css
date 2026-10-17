@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #fff8ee;
+  --color-cream-dark: #fdeed9;
+  --color-ketchup: #e6392b;
+  --color-ketchup-dark: #c22a1f;
+  --color-mustard: #ffb800;
+  --color-mustard-soft: #ffcf4d;
+  --color-ink: #141414;
+  --color-ink-soft: #3a3a3a;
+
+  --font-display: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-script: "Caveat", cursive;
+
+  --shadow-card: 0 10px 30px -12px rgba(20, 20, 20, 0.18);
+  --shadow-pop: 0 18px 44px -14px rgba(230, 57, 43, 0.45);
+
+  --animate-wiggle: wiggle 0.5s ease-in-out;
+  --animate-float: float 5s ease-in-out infinite;
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-8deg) scale(1.08); }
+  75% { transform: rotate(8deg) scale(1.08); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-mustard);
+  color: var(--color-ink);
+}
+
+/* Playful dotted texture for section backgrounds */
+.dot-grid {
+  background-image: radial-gradient(rgba(230, 57, 43, 0.14) 1.5px, transparent 1.5px);
+  background-size: 22px 22px;
+}
+
+/* Black paint-splash blob for hero imagery */
+.paint-blob {
+  border-radius: 46% 54% 58% 42% / 44% 46% 54% 56%;
+  transform: rotate(-4deg);
+}
+
+.paint-blob-soft {
+  border-radius: 58% 42% 55% 45% / 52% 58% 42% 48%;
+}
+
+/* Hide scrollbars on horizontal scrollers */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+.drawer-shadow {
+  box-shadow: -24px 0 60px -20px rgba(20, 20, 20, 0.35);
+}
